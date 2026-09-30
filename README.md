@@ -1,54 +1,52 @@
 # Myntra Fashion Catalog Analysis
-
-An Excel-based data analysis project exploring Myntra's fashion catalog, pricing, discounts, customer ratings, brands, and gender-wise product distribution.
+An Excel-based analysis of Myntra's fashion catalog covering product assortment, pricing, discounts, customer ratings, brands, and gender-wise distribution.
 
 ## Overview
-
-This project analyzes a large Myntra fashion catalog to understand product distribution, pricing patterns, discount levels, customer ratings, and brand presence.
-
-The analysis was performed using Microsoft Excel through data cleaning, PivotTables, PivotCharts, formulas, and dashboard visualization.
-
-The final dashboard summarizes the major patterns in the catalog and provides an easy-to-understand view of the analysis.
+This project analyzes Myntra's fashion catalog to understand the composition of products, pricing patterns, discount levels, customer rating coverage, and brand presence.
+The analysis was performed using Microsoft Excel through data cleaning, PivotTables, PivotCharts, and dashboard visualization.
+The final dashboard brings the major findings together into a business-focused view of the catalog.
 
 ## Problem Statement
-
-The objective of this project is to analyze Myntra's fashion catalog and identify meaningful patterns related to:
-
-- Product distribution by gender and category
-- Original price and selling price
-- Discount levels
-- Customer rating availability
-- Customer ratings across discount ranges
-- Brand presence
+The objective of this analysis is to understand Myntra's fashion product assortment and identify meaningful patterns in:
+- Product distribution by gender
+- Product distribution across discount segments
+- Brand-level product presence
+- Original price versus selling price
+- Customer rating coverage
+- Customer ratings across discount levels
 - Category and subcategory pricing
-
-The analysis aims to convert raw catalog data into useful business insights that can support better understanding of product pricing, discounts, ratings, and catalog composition.
+The analysis aims to convert a large product catalog into meaningful insights that can help understand product assortment, pricing, discounting, and customer engagement patterns.
 
 ## Dataset
+The original dataset includes:
+- `product_id`
+- `brand_name`
+- `category`
+- `individual_category`
+- `category_by_gender`
+- `discount_price (in Rs)`
+- `original_price (in Rs)`
+- `discount_offer`
+- `size_option`
+- `ratings`
+- `reviews`
 
-The dataset contains Myntra fashion catalog information, including product-level attributes such as:
-
-- Product details
-- Brand
-- Gender
-- Category
-- Subcategory
-- Original price
-- Selling price
-- Discount
-- Customer rating
-- Rating availability
-
-The original dataset was provided in CSV format. A cleaned Excel version of the dataset is included in this repository for analysis and inspection.
+### Calculated Fields
+Additional analytical fields were created in Excel to support pricing, discount, rating, and sales analysis:
+- `offer_rs`
+- `offer_pct`
+- `selling_price`
+- `discount_percent`
+- `has_rated`
+- `is_on_sale`
+- `discount_segment`
+These calculated fields were derived from the available product information and were used for analysis, PivotTables, PivotCharts, dashboard filters, and visualizations.
 
 ### Dataset File
-
 `data/Myntra_Cleaned_Data.xlsx`
-
-The Excel workbook contains the cleaned dataset along with PivotTables and PivotCharts used during the analysis.
+The Excel workbook contains the cleaned data along with the PivotTables and PivotCharts used for the analysis.
 
 ## Tools & Technologies
-
 - Microsoft Excel
 - Excel Formulas
 - Data Cleaning
@@ -57,51 +55,66 @@ The Excel workbook contains the cleaned dataset along with PivotTables and Pivot
 - Data Visualization
 
 ## Methods
-
-The analysis followed these major steps:
-
-1. Cleaned and prepared the raw catalog data.
-2. Checked and handled missing values and inconsistent records.
-3. Analyzed product distribution across gender, category, and subcategory.
-4. Compared original prices with selling prices.
-5. Analyzed discount levels across products.
-6. Examined customer rating availability.
-7. Compared average ratings across different discount ranges.
-8. Analyzed product presence across brands.
-9. Created PivotTables and PivotCharts.
-10. Built a dashboard to present the major findings.
+The analysis was performed through the following steps:
+1. Cleaned and prepared the original Myntra fashion catalog data.
+2. Reviewed product, category, pricing, discount, rating, and review fields.
+3. Created `offer_rs` and `offer_pct` to analyze offer values.
+4. Created `selling_price` for pricing analysis.
+5. Calculated `discount_percent` to measure the percentage discount applied to products.
+6. Created `has_rated` to identify products with available customer ratings.
+7. Created `is_on_sale` to identify products available on sale.
+8. Created `discount_segment` to group products into different discount ranges.
+9. Analyzed product distribution by gender.
+10. Analyzed products across discount segments.
+11. Identified the top brands by number of products.
+12. Compared average original price and selling price across subcategories.
+13. Compared customer ratings across discount levels and genders.
+14. Created PivotTables and PivotCharts.
+15. Built the final Excel dashboard with interactive filters.
 
 ## Key Insights
+### 01 | Product Assortment
+Women account for approximately **64%** of the catalog, while men account for approximately **36%**, indicating a substantially larger product assortment for women.
 
-- Women-focused products represent a larger share of the catalog than men-focused products.
-- A significant portion of products do not have customer ratings.
-- The catalog contains a wide range of original prices, selling prices, and discount levels.
-- Average customer ratings remain above 4.0 across the analyzed discount ranges.
-- Average ratings show a gradual decline as discount levels increase.
-- Product pricing varies considerably across different categories and subcategories.
-- A relatively small number of brands account for a large share of the products in the catalog.
+### 02 | Discount & Customer Rating
+Customer ratings remain strong across discount levels, averaging above **4.0** throughout. However, average ratings gradually decline from approximately **4.24** for products with no discount to approximately **4.02** for products with discounts of 61% or more.
+This suggests that deeper discounts are not associated with higher customer ratings in this catalog.
+
+### 03 | Customer Engagement & Data Coverage
+Only approximately **36%** of listed products have customer ratings. This limits rating-based performance assessment and means brand comparisons are more reliable for brands with sufficient rated products.
+
+### 04 | Product & Brand Distribution
+The catalog contains a wide range of brands, with a relatively small group of brands accounting for a substantial number of listed products.
+
+### 05 | Pricing Variation
+Average original and selling prices vary considerably across subcategories, highlighting differences in pricing and discounting strategies across the fashion catalog.
 
 ## Dashboard
-
-The final dashboard provides a visual summary of product distribution, pricing, discounts, ratings, brands, and category-level patterns.
+The final dashboard provides a consolidated view of:
+- Total products
+- Average customer rating
+- Average selling price
+- Average discount percentage
+- Products by discount segment
+- Top 10 brands by number of products
+- Customer rating across discount levels by gender
+- Product share by gender
+- Average original versus selling price by subcategory
+- Interactive filters for rating availability, category, sale status, and gender
 
 ![Myntra Fashion Catalog Dashboard](dashboard/dashboard.png)
 
 ## Result & Conclusion
-
-The analysis provides a structured view of Myntra's fashion catalog and highlights important patterns in product distribution, pricing, discounts, ratings, and brand presence.
-
-The project demonstrates how Excel can be used to clean a large dataset, perform business-focused analysis, and communicate findings through an interactive dashboard.
+The analysis provides a structured view of Myntra's fashion catalog and highlights important patterns in product assortment, pricing, discounting, customer ratings, and brand presence.
+The dashboard shows that women-focused products form the larger share of the catalog, while customer rating coverage remains limited. Ratings remain relatively strong across discount levels, although average ratings show a gradual decline as discounts become deeper.
+Overall, this project demonstrates how Excel can be used to clean a large dataset, perform business-focused analysis, identify meaningful patterns, and communicate insights through an interactive dashboard.
 
 ## Author
-
 **Kajal Gaud**
 
-B.Tech Computer Science Engineering  
-Government Engineering College, Bharatpur
-
+Final Year B.Tech Computer Science And Engineering Student 
 Aspiring Data Analyst
 
 ### Contact
-
-- GitHub: [KajalGaud](https://github.com/KajalGaud)
+LinkedIn: www.linkedin.com/in/kajal-gaud-30798331a
+Email: kgaud252@gmail.com
