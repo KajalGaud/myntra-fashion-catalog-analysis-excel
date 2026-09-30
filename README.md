@@ -40,10 +40,12 @@ Additional analytical fields were created in Excel to support pricing, discount,
 - `has_rated`
 - `is_on_sale`
 - `discount_segment`
+
 These calculated fields were derived from the available product information and were used for analysis, PivotTables, PivotCharts, dashboard filters, and visualizations.
 
 ### Dataset File
 `data/Myntra_Cleaned_Data.xlsx`
+
 The Excel workbook contains the cleaned data along with the PivotTables and PivotCharts used for the analysis.
 
 ## Tools & Technologies
